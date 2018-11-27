@@ -130,7 +130,7 @@ static ssize_t device_read(struct file *filp, /* see include/linux/fs.h   */
  * Called when a process writes to dev file: echo "hi" > /dev/hello
  */
 static ssize_t
-device_write(struct file *filp, const char *buf, size_t len, loff_t *off)
+device_write(struct file *filp, const char __user *buf, size_t len, loff_t *off)
 {
   printk(KERN_ALERT "Sorry, this operation isn't supported.\n");
   return -EINVAL;
